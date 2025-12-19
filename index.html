@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tastes Like Spain | Spanish Cooking Workshops in Helsinki</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Spanish color palette definition */
+        :root {
+            --color-primary: #C13832; /* Intense Terracotta Red */
+            --color-secondary: #FFB300; /* Saffron Yellow */
+            --color-tertiary: #4A4A4A; /* Dark Gray */
+            --color-background: #F5E9D3; /* Warm Light Gray */
+            --color-accent-blue: #007bff; /* Blue for student/language */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-tertiary);
+            overflow-x: hidden;
+        }
+
+        /* Custom styles for entrance animations */
+        .slide-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* Main button style */
+        .btn-primary {
+            background-color: var(--color-primary);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #A32D28; /* Darker red on hover */
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 10px rgba(193, 56, 50, 0.4);
+        }
+        
+        /* Workshop card effect */
+        .workshop-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Badge/sticker style */
+        .badge {
+            background-color: var(--color-secondary);
+            color: var(--color-tertiary);
+            transform: rotate(-5deg);
+        }
+        
+        /* Fixed header style */
+        header {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 50;
+        }
+
+        /* Custom style for the select element to manage the custom arrow and background */
+        .select-wrapper {
+            position: relative;
+        }
+        .select-arrow {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation and Header -->
+    <header class="sticky top-0 bg-white/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- LOGO: "Tastes" in black, "Like Spain" in red -->
+            <a href="#hero" class="text-2xl font-black text-stone-900 tracking-wider">
+                Tastes <span class="text-[var(--color-primary)]">Like Spain</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-[var(--color-primary)] transition">About Us</a>
+                <a href="#fiestas" class="hover:text-[var(--color-primary)] transition">Fiestas</a>
+                <a href="#team" class="hover:text-[var(--color-primary)] transition">The Team</a>
+                <a href="#contact" class="px-4 py-1.5 rounded-full text-white btn-primary shadow-lg">Book Now</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-[var(--color-primary)] hover:bg-red-50 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- A. Hero / Cover -->
+        <section id="hero" class="relative overflow-hidden bg-[var(--color-primary)] text-white pt-24 pb-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+                
+                <!-- Text Column -->
+                <div class="md:w-1/2 mb-10 md:mb-0 slide-right">
+                    <span class="text-xl font-semibold text-[var(--color-secondary)] uppercase block mb-3">Finland x Spain</span>
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black leading-tight mb-6">
+                        It's not just a cooking class.<span class="block text-stone-900">It's a Fiesta!</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-light mb-10 opacity-90">
+                        Hands-on workshops in Helsinki, learning recipes, traditions, and stories directly from Spain.
+                    </p>
+                    <a href="#fiestas" class="inline-block px-10 py-4 text-lg font-bold bg-[var(--color-background)]-[var(--color-primary)] rounded-xl shadow-xl hover:shadow-2xl transition hover:scale-[1.02]">
+                        See Upcoming Fiestas
+                    </a>
+                </div>
+
+                <!-- Image Column (New high-quality image focusing on sharing and celebration) -->
+                <div class="md:w-1/2 relative flex justify-center slide-left">
+                    <img 
+                        src="tallerportada01.avif" 
+                        alt="esta mierda no funciona" 
+                        class="rounded-3xl shadow-2xl object-cover w-full max-w-lg md:max-w-none transform rotate-1 transition duration-500 hover:rotate-0 hover:scale-[1.01]"
+                        loading="eager"
+                        onerror="this.onerror=null;this.src='https://placehold.co/800x600/C13832/FFFFFF?text=Fiesta+y+Comunidad'"
+                    >
+                    <div class="badge absolute top-0 -left-4 text-sm px-4 py-2 rounded-full font-bold shadow-md hidden sm:block">
+                        Limited Edition!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- B. About Us -->
+        <section id="about" class="py-20 sm:py-32 bg-white">
+            <div class="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image (High quality image showing community/sharing) -->
+                <div class="slide-left">
+                    <img 
+                        src="tallerapuntodeempezar.png" 
+                        alt="esta mierda no funciona" 
+                        class="rounded-3xl shadow-2xl object-cover w-full max-w-lg md:max-w-none transform rotate-1 transition duration-500 hover:rotate-0 hover:scale-[1.01]"
+                        loading="eager"
+                        onerror="this.onerror=null;this.src='https://placehold.co/800x600/C13832/FFFFFF?text=Fiesta+y+Comunidad'"
+                    >
+                </div>
+                <!-- Text -->
+                <div class="slide-right">
+                    <h2 class="text-4xl font-extrabold text-stone-900 mb-6">Our Passion: Sharing Spanish Culture.</h2>
+                    <p class="text-lg mb-6">
+                        We are a young Spanish team, and these are the recipes we grew up with. The ones cooked at home, passed down without measurements, learned by watching and helping in the kitchen. In Helsinki, we share them exactly as we know them: simple, honest, and made to be enjoyed together.
+                    </p>
+                    <p class="text-lg mb-6 font-semibold text-[var(--color-primary)]">
+                        We cook the way we learned at home: calmly, with care, and without rushing. We enjoy explaining things, answering questions, and sharing the small details that make each recipe special. It feels less like a class, and more like cooking together.
+                    </p>
+                    <a href="#team" class="text-[var(--color-tertiary)] hover:text-[var(--color-primary)] font-medium inline-flex items-center group transition">
+                        Meet Our Team <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-1 group-hover:translate-x-1 transition"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- C. Fiestas -->
+        <section id="fiestas" class="py-20 sm:py-32 bg-[var(--color-background)]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 slide-up">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-stone-900 mb-3">Our Unique Fiestas</h2>
+                    <p class="text-xl text-[var(--color-tertiary)]">A culinary, participatory, and cultural experience available only from <span class="font-bold text-[var(--color-primary)]">January 18th to February 13th.</span></p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Fiesta 1: Classic Valencian Paella -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up">
+                        <img 
+                            src="talleroficial.jpg" 
+                            alt="" 
+                            class="w-full h-48 object-cover"
+                            loading="lazy"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/C13832/FFFFFF?text=Paella+Valenciana'"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-stone-900 mb-2">Spanish Home Cooking</h3>
+                            <p class="text-sm font-semibold text-[var(--color-primary)] mb-4">3.5 Hours | All Levels</p>
+                            <p class="mb-4">This is our most representative Fiesta. Take a culinary tour across Spain and taste the most iconic dishes—from Galicia to the Canary Islands. Try the best Iberian ham (better than Italian!), the famous tortilla de patatas, and the incredible Valencian paella. Cook, taste, and enjoy just like at a real Spanish table!</p>
+                            <ul class="text-sm mb-6 space-y-1">
+                                <li class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2 text-yellow-600"></i> Duration: 3.5h</li>
+                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 80€</li>
+                            </ul>
+                            <a href="#contact" class="block w-full text-center px-4 py-3 btn-primary text-white rounded-lg font-semibold">
+                                Reserve Your Spot
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Fiesta 2: Regional Desserts (Churros & Natillas) -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up" style="transition-delay: 100ms;">
+                        <img 
+                            src="postresspain.jpg" 
+                            alt="" 
+                            class="w-full h-48 object-cover"
+                            loading="lazy"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFB300/333333?text=Spanish+Desserts'"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-stone-900 mb-2">Churros, Torrijas & Crema Catalana</h3>
+                            <p class="text-sm font-semibold text-[var(--color-primary)] mb-4">2 Hours | All Levels</p>
+                            <p class="mb-4">If you love sweets and coffee breaks are your favorite moment, this Fiesta is for you! Don’t miss the chance to try authentic churros with chocolate, the traditional Easter torrija, and the amazing Crema Catalana with a crispy caramelized top. Pure Spanish indulgence in a fun and relaxed atmosphere.</p>
+                            <ul class="text-sm mb-6 space-y-1">
+                                <li class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2 text-yellow-600"></i> Duration: 2h</li>
+                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 65€</li>
+                            </ul>
+                            <a href="#contact" class="block w-full text-center px-4 py-3 btn-primary text-white rounded-lg font-semibold">
+                                Reserve Your Spot
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Fiesta 3: Northern Cuisine (Pintxos & Cachopo) -->
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up" style="transition-delay: 200ms;">
+                        <img 
+                            src="pintxosvascos.jpg" 
+                            alt="" 
+                            class="w-full h-48 object-cover"
+                            loading="lazy"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/795548/FFFFFF?text=Basque+Pintxos'"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-stone-900 mb-2">Basque Pintxos & Asturian Cachopo</h3>
+                            <p class="text-sm font-semibold text-[var(--color-primary)] mb-4">3.5 Hours | All Levels</p>
+                            <p class="mb-4">Our most famous Fiesta! Learn to make the prettiest and most delicious pintxos, just like in Bilbao, and enjoy an incredible cachopo filled with authentic Iberian ham and Cabrales cheese. Fun, hands-on, and full of northern Spanish flavor.</p>
+                            <ul class="text-sm mb-6 space-y-1">
+                                <li class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2 text-yellow-600"></i> Duration: 3.5h</li>
+                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 95€</li>
+                            </ul>
+                            <a href="#contact" class="block w-full text-center px-4 py-3 btn-primary text-white rounded-lg font-semibold">
+                                Reserve Your Spot
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+<!-- G. Culture and Tradition -->
+        <section id="culture" class="py-20 sm:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 slide-up">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-stone-900 mb-3">Connection to the Land</h2>
+                    <p class="text-xl text-[var(--color-tertiary)]">Experience Spain through its flavors, stories, and people.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-10 text-center">
+                    
+                    <!-- Icon 1: Culture -->
+                    <div class="p-6 rounded-xl sm:py-32 bg-[var(--color-background)]">
+                        <i data-lucide="book-open" class="w-12 h-12 mx-auto text-[var(--color-primary)] mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Real Stories</h3>
+                        <p class="text-sm text-stone-600">Learn the stories behind every ingredient and recipe, passed down from our families and our kitchens. Taste Spain’s history as you cook.</p>
+                    </div>
+
+                    <!-- Icon 2: Ingredients -->
+                    <div class="p-6 rounded-xl sm:py-32 bg-[var(--color-background)]" style="transition-delay: 150ms;">
+                        <i data-lucide="utensils" class="w-12 h-12 mx-auto text-[var(--color-primary)] mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Authentic Ingredients</h3>
+                        <p class="text-sm text-stone-600">We use the finest Spanish ingredients—olive oil, saffron, Iberian ham, and regional cheeses—to bring the true taste of Spain straight to your plate. Every bite reflects the flavors of our kitchens and our land.</p>
+                    </div>
+
+                    <!-- Icon 3: Language -->
+                    <div class="p-6 rounded-xl sm:py-32 bg-[var(--color-background)]" style="transition-delay: 150ms;">
+                        <i data-lucide="message-circle" class="w-12 h-12 mx-auto text-[var(--color-primary)] mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Language Immersion</h3>
+                        <p class="text-sm text-stone-600">Practice Spanish naturally while cooking, learning the words and expressions locals use every day in a relaxed and friendly environment.</p>
+                    </div>
+
+                    <!-- Icon 4: Community -->
+                    <div class="p-6 rounded-xl sm:py-32 bg-[var(--color-background)]">
+                        <i data-lucide="users" class="w-12 h-12 mx-auto text-[var(--color-primary)] mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Building Community</h3>
+                        <p class="text-sm text-stone-600">A place to connect, share, and laugh—where Spanish food becomes the bridge between cultures and people.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E. The Team -->
+        <section id="team" class="py-20 sm:py-32 bg-[var(--color-background)]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 slide-up">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-stone-900 mb-3">Meet The Team</h2>
+                    <p class="text-xl text-[var(--color-tertiary)]">The young, real people behind our Fiestas, your guides to an authentic Spanish experience</p>
+                </div>
+
+                <!-- Team Grid (3 columns on large screens, 2 on medium, 1 on small) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    
+                    <!-- Team Member 1: Aitana (Chef) -->
+                    <div class="text-center slide-up">
+                        <div class="relative inline-block mb-6">
+                            <img 
+                                src="aitanalacheff01.png" 
+                                alt="" 
+                                class="w-48 h-48 object-cover rounded-full mx-auto ring-4 ring-[var(--color-primary)] shadow-xl"
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://placehold.co/192x192/C13832/FFFFFF?text=Aitana'"
+                            >
+                            <div class="badge absolute bottom-0 right-0 px-3 py-1 text-xs rounded-full shadow-lg">Extremadura</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-2">Aitana</h3>
+                        <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Team</p>
+                        
+                    </div>
+
+                    <!-- Team Member 2: Alberto (Tapas) - PHOTO UPDATED HERE FOR MAXIMUM COMPATIBILITY -->
+                    <div class="text-center slide-up" style="transition-delay: 100ms;">
+                        <div class="relative inline-block mb-6">
+                            <img 
+                                src="albertoelcheff01.png"
+                                alt="" 
+                                class="w-48 h-48 object-cover rounded-full mx-auto ring-4 ring-[var(--color-primary)] shadow-xl"
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://placehold.co/192x192/FFB300/333333?text=Alberto+Error'"
+                            >
+                            <div class="badge absolute bottom-0 right-0 px-3 py-1 text-xs rounded-full shadow-lg">Canarias</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-2">Alberto </h3>
+                        <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Cooking</p>
+                        
+                    </div>
+                    
+                    <!-- Team Member 3: Sofía (Desserts) -->
+                    <div class="text-center slide-up" style="transition-delay: 200ms;">
+                        <div class="relative inline-block mb-6">
+                            <img 
+                                src="sofilacheff01.png" 
+                                alt="" 
+                                class="w-48 h-48 object-cover rounded-full mx-auto ring-4 ring-[var(--color-primary)] shadow-xl"
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://placehold.co/192x192/FF8C00/FFFFFF?text=Sofia'"
+                            >
+                            <div class="badge absolute bottom-0 right-0 px-3 py-1 text-xs rounded-full shadow-lg">Burgos</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-2">Sofía </h3>
+                        <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Team</p>
+                    
+                    </div>
+
+                    <!-- Team Member 4: Jacobo (Beverages) -->
+                    <div class="text-center slide-up" style="transition-delay: 300ms;">
+                        <div class="relative inline-block mb-6">
+                            <img 
+                                src="marloelcheff02.jpg" 
+                                alt="" 
+                                class="w-48 h-48 object-cover rounded-full mx-auto ring-4 ring-[var(--color-primary)] shadow-xl"
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://placehold.co/192x192/C13832/FFFFFF?text=Jacobo'"
+                            >
+                            <div class="badge absolute bottom-0 right-0 px-3 py-1 text-xs rounded-full shadow-lg">Madrid</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-2">Jacobo</h3>
+                        <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Clients</p>
+                       
+                    </div>
+
+                    <!-- Team Member 5: Simone (Northern/Basque) -->
+                    <div class="text-center slide-up" style="transition-delay: 500ms;">
+                        <div class="relative inline-block mb-6">
+                            <img 
+                                src="simolacheff01.png" 
+                                alt="" 
+                                class="w-48 h-48 object-cover rounded-full mx-auto ring-4 ring-[var(--color-primary)] shadow-xl"
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://placehold.co/192x192/4F46E5/FFFFFF?text=Simone'"
+                            >
+                            <div class="badge absolute bottom-0 right-0 px-3 py-1 text-xs rounded-full shadow-lg">Madrid</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-2">Simone</h3>
+                        <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Cooking</p>
+                    
+                    </div>
+                    <!-- Team Member 6: Ana (Logistics) -->
+                    <div class="text-center slide-up" style="transition-delay: 400ms;">
+                        <div class="relative inline-block mb-6">
+                            <img 
+                                src="anitalacheff01.png" 
+                                alt="" 
+                                class="w-48 h-48 object-cover rounded-full mx-auto ring-4 ring-[var(--color-primary)] shadow-xl"
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://placehold.co/192x192/8BC34A/FFFFFF?text=Ana'"
+                            >
+                            <div class="badge absolute bottom-0 right-0 px-3 py-1 text-xs rounded-full shadow-lg">Madrid</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-2">Ana </h3>
+                        <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Clients</p>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- F. Contact / Reservation Form -->
+         <section id="contact" class="py-20 sm:py-32 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 slide-up">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-stone-900 mb-3">Reserve Your Place in the Fiesta</h2>
+                    <p class="text-xl text-[var(--color-tertiary)]">Limited spots: only 12 per Fiesta! Reserve your place now.</p>
+                </div>
+        <div class="bg-[var(--color-background)] p-8 md:p-12 rounded-2xl shadow-2xl slide-up max-w-xl mx-auto">
+    <form id="booking-form" class="space-y-6 text-center">
+
+        <h2 class="text-2xl font-bold mb-4">Reserve Your Fiesta</h2>
+
+        <!-- Name -->
+        <div>
+            <label for="name" class="block text-sm font-medium text-stone-700 mb-2">Full Name</label>
+            <input type="text" id="name" name="name" required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
+                placeholder="Your full name">
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email</label>
+            <input type="email" id="email" name="email" required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
+                placeholder="your@email.com">
+        </div>
+
+        <!-- Phone -->
+        <div>
+            <label for="phone" class="block text-sm font-medium text-stone-700 mb-2">Phone </label>
+            <input type="tel" id="phone" name="phone"
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
+                placeholder="+358 600 123 456">
+        </div>
+
+        <!-- Fiesta -->
+        <div>
+            <label for="workshop" class="block text-sm font-medium text-stone-700 mb-2">Select Fiesta</label>
+            <select id="workshop" name="workshop" required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] bg-white appearance-none">
+                <option value="" disabled selected>Choose your culinary journey...</option>
+                <option value="pintxos" disabled>Basque Pintxos & Asturian Cachopo – Fully booked</option>
+                <option value="desserts" disabled>Sweet Journey: Regional Desserts – Fully booked</option>
+                <option value="homecooking">Spanish Home Cooking</option>
+            </select>
+        </div>
+
+        <!-- Date -->
+        <div>
+            <label for="date" class="block text-sm font-medium text-stone-700 mb-2">Select Date</label>
+            <select id="date" name="date" required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] bg-white appearance-none">
+                <option value="" disabled selected>Pick a date...</option>
+                <option value="2025-01-24">January 24</option>
+                <option value="2025-01-31">January 31</option>
+                <option value="2025-02-07">February 7</option>
+            </select>
+        </div>
+
+        <!-- Number of spots -->
+        <div>
+            <label for="spots" class="block text-sm font-medium text-stone-700 mb-2">Number of Spots</label>
+            <select id="spots" name="spots" required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] bg-white appearance-none">
+                <option value="" disabled selected>How many spots do you want to reserve?</option>
+                <option value="1spot">1</option>
+                <option value="2spot">2</option>
+                <option value="3spot">3</option>
+                <option value="4spot">4</option>
+                <option value="5spot">5</option>
+                <option value="6spot">6</option>
+                <option value="7spot">7</option>
+                <option value="8spot">8</option>
+                <option value="9spot">9</option>
+                <option value="10spot">10</option>
+            </select>
+        </div>
+
+        <!-- PayPal button -->
+        <div>
+            <a href="TU_LINK_DE_PAYPAL" target="_blank"
+               class="w-full inline-block px-8 py-4 text-lg font-bold text-white rounded-xl btn-primary shadow-xl hover:shadow-2xl text-center">
+                Confirm & Pay
+            </a>
+        </div>
+
+    </form>
+</div>
+</section>
+
+    <!-- Footer: Revertido para que "Tastes" sea blanco y "Like Spain" amarillo/dorado -->
+    <footer class="bg-stone-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- LOGO in Footer: "Tastes" in white (default text color), "Like Spain" in Saffron Yellow -->
+            <p class="text-xl font-black tracking-wider mb-2">
+                Tastes <span class="text-[var(--color-primary)]">Like Spain</span>
+            </p>
+            <p class="text-sm text-stone-400 mb-4">Cooking Workshops & Culinary Experiences in Helsinki.</p>
+            
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-stone-400 hover:text-[var(--color-primary)] transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" class="text-stone-400 hover:text-[var(--color-primary)] transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="tasteslikespain@gmail.com" class="text-stone-400 hover:text-[var(--color-primary)] transition"><i data-lucide="mail" class="w-6 h-6"></i></a>
+            </div>
+
+            <p class="text-xs text-stone-600">&copy; 2025 Tastes Like Spain. All rights reserved. Made with love (and olive oil).</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ----------------------------------------------------
+        // JavaScript for Animations (Intersection Observer)
+        // ----------------------------------------------------
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-up, .slide-left, .slide-right, .fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // ----------------------------------------------------
+        // JavaScript for Mobile Menu (Simple Toggle)
+        // ----------------------------------------------------
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const header = document.querySelector('header');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                // Simple feedback that button was clicked (you could implement a hidden menu here)
+                console.log('Mobile menu clicked! (A hidden mobile menu would appear here)');
+                // In a real app, you would toggle a class on the header or a dedicated menu div
+                // Example: header.classList.toggle('menu-open');
+                
+                // For this single-file demo, let's just show a notification
+                showNotification('Mobile menu clicked! Navigation is fixed in the desktop version for brevity.', 'info');
+            });
+        }
+
+        // ----------------------------------------------------
+        // JavaScript for Smooth Scrolling (FIX for TypeError: Cannot read properties of null)
+        // ----------------------------------------------------
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                // Ensure targetId is not just '#'
+                if (targetId === '#') return; 
+
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Smoothly scroll to the target element
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                } else {
+                    console.error(`Target element not found for ID: ${targetId}`);
+                    // Optionally perform a standard navigation if smooth scroll fails
+                    window.location.hash = targetId; 
+                }
+            });
+        });
+
+        // ----------------------------------------------------
+        // JavaScript for Custom Notification/Alert (instead of window.alert)
+        // ----------------------------------------------------
+        function showNotification(message, type = 'info') {
+            let bgColor = 'bg-stone-900';
+            if (type === 'success') bgColor = 'bg-green-500';
+            if (type === 'error') bgColor = 'bg-red-600';
+
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `fixed top-5 right-5 p-4 rounded-lg text-white shadow-xl transition-all duration-500 ${bgColor} transform translate-x-full opacity-0 z-[100]`;
+            notification.textContent = message;
+
+            document.body.appendChild(notification);
+
+            // Show animation
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full', 'opacity-0');
+                notification.classList.add('translate-x-0', 'opacity-100');
+            }, 10);
+
+            // Hide animation and cleanup
+            setTimeout(() => {
+                notification.classList.remove('translate-x-0', 'opacity-100');
+                notification.classList.add('translate-x-full', 'opacity-0');
+                // Remove element after transition
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }, 3000);
+        }
+
+        // ----------------------------------------------------
+        // Form Submission Handler (Prevents default submission)
+        // ----------------------------------------------------
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                showNotification('¡Reserva simulada con éxito! Revisa la consola para ver los datos.', 'success');
+                
+                // Collect form data (for simulation)
+                const formData = new FormData(this);
+                const data = {};
+                for (const [key, value] of formData.entries()) {
+                    data[key] = value;
+                }
+                console.log('Form data submitted (Simulated):', data);
+            });
+        }
+    </script>
+</body>
+</html>
