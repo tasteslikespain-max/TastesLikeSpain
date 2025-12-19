@@ -6,6 +6,10 @@
     <title>Tastes Like Spain | Spanish Cooking Workshops in Helsinki</title>
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+     <!-- Cosas de Paypal -->
+     <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA1OsrTN9_a3Pco12QAv3m-V5ngJpUFJJmVJJe471t0dHcoxn9PBC6eNqJl_oc-OIlI8tTOJAmgHU5gX8&components=hosted-buttons&disable-funding=venmo&currency=EUR">
+    </script>
     <!-- Carga de Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -103,7 +107,7 @@
             <a href="#hero" class="text-2xl font-black text-stone-900 tracking-wider">
                 Tastes <span class="text-[var(--color-primary)]">Like Spain</span>
             </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+            <nav class="flex space-x-8 text-sm font-medium">
                 <a href="#about" class="hover:text-[var(--color-primary)] transition">About Us</a>
                 <a href="#fiestas" class="hover:text-[var(--color-primary)] transition">Fiestas</a>
                 <a href="#team" class="hover:text-[var(--color-primary)] transition">The Team</a>
@@ -135,7 +139,7 @@
                     </a>
                 </div>
 
-                <!-- Image Column -->
+                <!-- Image Column (New high-quality image focusing on sharing and celebration) -->
                 <div class="md:w-1/2 relative flex justify-center slide-left">
                     <img 
                         src="img/tallerportada01.avif" 
@@ -144,7 +148,7 @@
                         loading="eager"
                         onerror="this.onerror=null;this.src='https://placehold.co/800x600/C13832/FFFFFF?text=Fiesta+y+Comunidad'"
                     >
-                    <div class="badge absolute top-0 -left-4 text-sm px-4 py-2 rounded-full font-bold shadow-md hidden sm:block">
+                    <div class="badge absolute top-0 -left-4 text-sm px-4 py-2 rounded-full font-bold shadow-md block">
                         Limited Edition!
                     </div>
                 </div>
@@ -154,7 +158,7 @@
         <!-- B. About Us -->
         <section id="about" class="py-20 sm:py-32 bg-white">
             <div class="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-                <!-- Image -->
+                <!-- Image (High quality image showing community/sharing) -->
                 <div class="slide-left">
                     <img 
                         src="img/tallerapuntodeempezar.png" 
@@ -189,7 +193,7 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <!-- Fiesta 1 -->
+                    <!-- Fiesta 1: Classic Valencian Paella -->
                     <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up">
                         <img 
                             src="img/talleroficial.jpg" 
@@ -204,7 +208,7 @@
                             <p class="mb-4">This is our most representative Fiesta. Take a culinary tour across Spain and taste the most iconic dishes—from Galicia to the Canary Islands. Try the best Iberian ham (better than Italian!), the famous tortilla de patatas, and the incredible Valencian paella. Cook, taste, and enjoy just like at a real Spanish table!</p>
                             <ul class="text-sm mb-6 space-y-1">
                                 <li class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2 text-yellow-600"></i> Duration: 3.5h</li>
-                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 80€</li>
+                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 88€·VAT INCLUDED</li>
                             </ul>
                             <a href="#contact" class="block w-full text-center px-4 py-3 btn-primary text-white rounded-lg font-semibold">
                                 Reserve Your Spot
@@ -212,7 +216,7 @@
                         </div>
                     </div>
 
-                    <!-- Fiesta 2 -->
+                    <!-- Fiesta 2: Regional Desserts (Churros & Natillas) -->
                     <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up" style="transition-delay: 100ms;">
                         <img 
                             src="img/postresspain.jpg" 
@@ -227,7 +231,7 @@
                             <p class="mb-4">If you love sweets and coffee breaks are your favorite moment, this Fiesta is for you! Don’t miss the chance to try authentic churros with chocolate, the traditional Easter torrija, and the amazing Crema Catalana with a crispy caramelized top. Pure Spanish indulgence in a fun and relaxed atmosphere.</p>
                             <ul class="text-sm mb-6 space-y-1">
                                 <li class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2 text-yellow-600"></i> Duration: 2h</li>
-                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 65€</li>
+                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 82€·VAT INCLUDED</li>
                             </ul>
                             <a href="#contact" class="block w-full text-center px-4 py-3 btn-primary text-white rounded-lg font-semibold">
                                 Reserve Your Spot
@@ -235,7 +239,7 @@
                         </div>
                     </div>
                     
-                    <!-- Fiesta 3 -->
+                    <!-- Fiesta 3: Northern Cuisine (Pintxos & Cachopo) -->
                     <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up" style="transition-delay: 200ms;">
                         <img 
                             src="img/pintxosvascos.jpg" 
@@ -250,7 +254,7 @@
                             <p class="mb-4">Our most famous Fiesta! Learn to make the prettiest and most delicious pintxos, just like in Bilbao, and enjoy an incredible cachopo filled with authentic Iberian ham and Cabrales cheese. Fun, hands-on, and full of northern Spanish flavor.</p>
                             <ul class="text-sm mb-6 space-y-1">
                                 <li class="flex items-center"><i data-lucide="clock" class="w-4 h-4 mr-2 text-yellow-600"></i> Duration: 3.5h</li>
-                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 95€</li>
+                                <li class="flex items-center"><i data-lucide="tag" class="w-4 h-4 mr-2 text-yellow-600"></i> Price: 120€·VAT INCLUDED</li>
                             </ul>
                             <a href="#contact" class="block w-full text-center px-4 py-3 btn-primary text-white rounded-lg font-semibold">
                                 Reserve Your Spot
@@ -261,6 +265,7 @@
                 </div>
             </div>
         </section>
+
 <!-- G. Culture and Tradition -->
         <section id="culture" class="py-20 sm:py-32 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -301,6 +306,7 @@
                 </div>
             </div>
         </section>
+
         <!-- E. The Team -->
         <section id="team" class="py-20 sm:py-32 bg-[var(--color-background)]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -309,7 +315,10 @@
                     <p class="text-xl text-[var(--color-tertiary)]">The young, real people behind our Fiestas, your guides to an authentic Spanish experience</p>
                 </div>
 
+                <!-- Team Grid (3 columns on large screens, 2 on medium, 1 on small) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    
+                    <!-- Team Member 1: Aitana (Chef) -->
                     <div class="text-center slide-up">
                         <div class="relative inline-block mb-6">
                             <img 
@@ -323,8 +332,10 @@
                         </div>
                         <h3 class="text-2xl font-bold text-stone-900 mb-2">Aitana</h3>
                         <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Team</p>
+                        
                     </div>
 
+                    <!-- Team Member 2: Alberto (Tapas) - PHOTO UPDATED HERE FOR MAXIMUM COMPATIBILITY -->
                     <div class="text-center slide-up" style="transition-delay: 100ms;">
                         <div class="relative inline-block mb-6">
                             <img 
@@ -338,8 +349,10 @@
                         </div>
                         <h3 class="text-2xl font-bold text-stone-900 mb-2">Alberto </h3>
                         <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Cooking</p>
+                        
                     </div>
                     
+                    <!-- Team Member 3: Sofía (Desserts) -->
                     <div class="text-center slide-up" style="transition-delay: 200ms;">
                         <div class="relative inline-block mb-6">
                             <img 
@@ -353,8 +366,10 @@
                         </div>
                         <h3 class="text-2xl font-bold text-stone-900 mb-2">Sofía </h3>
                         <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Team</p>
+                    
                     </div>
 
+                    <!-- Team Member 4: Jacobo (Beverages) -->
                     <div class="text-center slide-up" style="transition-delay: 300ms;">
                         <div class="relative inline-block mb-6">
                             <img 
@@ -368,8 +383,10 @@
                         </div>
                         <h3 class="text-2xl font-bold text-stone-900 mb-2">Jacobo</h3>
                         <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Clients</p>
+                       
                     </div>
 
+                    <!-- Team Member 5: Simone (Northern/Basque) -->
                     <div class="text-center slide-up" style="transition-delay: 500ms;">
                         <div class="relative inline-block mb-6">
                             <img 
@@ -383,8 +400,9 @@
                         </div>
                         <h3 class="text-2xl font-bold text-stone-900 mb-2">Simone</h3>
                         <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Cooking</p>
+                    
                     </div>
-
+                    <!-- Team Member 6: Ana (Logistics) -->
                     <div class="text-center slide-up" style="transition-delay: 400ms;">
                         <div class="relative inline-block mb-6">
                             <img 
@@ -398,89 +416,76 @@
                         </div>
                         <h3 class="text-2xl font-bold text-stone-900 mb-2">Ana </h3>
                         <p class="text-lg font-semibold text-[var(--color-primary)] mb-3">Clients</p>
+                        
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- F. Contact / Reservation Form -->
-        <section id="contact" class="py-20 sm:py-32 bg-white">
+         <section id="contact" class="py-20 sm:py-32 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 slide-up">
                     <h2 class="text-4xl sm:text-5xl font-extrabold text-stone-900 mb-3">Reserve Your Place in the Fiesta</h2>
                     <p class="text-xl text-[var(--color-tertiary)]">Limited spots: only 12 per Fiesta! Reserve your place now.</p>
                 </div>
-                <div class="bg-[var(--color-background)] p-8 md:p-12 rounded-2xl shadow-2xl slide-up max-w-xl mx-auto">
-                    <form id="booking-form" class="space-y-6 text-center">
+        <div class="bg-[var(--color-background)] p-8 md:p-12 rounded-2xl shadow-2xl slide-up max-w-xl mx-auto">
+    <form id="booking-form" class="space-y-6 text-center">
 
-                        <h2 class="text-2xl font-bold mb-4">Reserve Your Fiesta</h2>
+        <h2 class="text-2xl font-bold mb-4">Reserve Your Fiesta</h2>
 
-                        <!-- Name -->
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-stone-700 mb-2">Full Name</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
-                                placeholder="Your full name">
-                        </div>
+        <!-- Name -->
+        <div>
+            <label for="name" class="block text-sm font-medium text-stone-700 mb-2">Full Name</label>
+            <input type="text" id="name" name="name" required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
+                placeholder="Your full name">
+        </div>
 
-                        <!-- Email -->
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
-                                placeholder="your@email.com">
-                        </div>
+        <!-- Email -->
+        <div>
+            <label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email</label>
+            <input type="email" id="email" name="email" required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
+                placeholder="your@email.com">
+        </div>
 
-                        <!-- Phone -->
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-stone-700 mb-2">Phone </label>
-                            <input type="tel" id="phone" name="phone"
-                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
-                                placeholder="+358 600 123 456">
-                        </div>
+        <!-- Phone -->
+        <div>
+            <label for="phone" class="block text-sm font-medium text-stone-700 mb-2">Phone </label>
+            <input type="tel" id="phone" name="phone"
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]"
+                placeholder="+358 600 123 456">
+        </div>
 
-                        <!-- Fiesta -->
-                        <div>
-                            <label for="workshop" class="block text-sm font-medium text-stone-700 mb-2">Select Fiesta</label>
-                            <select id="workshop" name="workshop" required
-                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] bg-white appearance-none">
-                                <option value="" disabled selected>Choose your culinary journey...</option>
-                                <option value="pintxos" disabled>Basque Pintxos & Asturian Cachopo – Fully booked</option>
-                                <option value="desserts" disabled>Sweet Journey: Regional Desserts – Fully booked</option>
-                                <option value="homecooking">Spanish Home Cooking</option>
-                            </select>
-                        </div>
+        <!-- Fiesta -->
+        <div>
+            <label for="workshop" class="block text-sm font-medium text-stone-700 mb-2">Select Fiesta</label>
+            <select id="workshop" name="workshop" required
+                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] bg-white appearance-none">
+                <option value="" disabled selected>Choose your culinary journey...</option>
+                <option value="pintxos" disabled>Basque Pintxos & Asturian Cachopo – Fully booked</option>
+                <option value="desserts" disabled>Sweet Journey: Regional Desserts – Fully booked</option>
+                <option value="homecooking">Spanish Home Cooking</option>
+            </select>
+        </div>
 
-                        <!-- Date -->
-                        <div>
-                            <label for="date" class="block text-sm font-medium text-stone-700 mb-2">Select Date</label>
-                            <select id="date" name="date" required
-                                class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)] bg-white appearance-none">
-                                <option value="" disabled selected>Pick a date...</option>
-                                <option value="2025-01-24">January 24</option>
-                                <option value="2025-01-31">January 31</option>
-                                <option value="2025-02-07">February 7</option>
-                            </select>
-                        </div>
+        <!-- PayPal button -->
+        <div class="flex justify-center"></div>
+        <div id="paypal-container-XXN9KQP6H3F5Q"></div>
+        <script>
+        paypal.HostedButtons({
+            hostedButtonId: "XXN9KQP6H3F5Q",
+        }).render("#paypal-container-XXN9KQP6H3F5Q")
+        </script>
 
-                        <!-- PayPal button (FIXED) -->
-                        <div>
-                            <a href="https://www.paypal.com/sdk/js?client-id=BAA1OsrTN9_a3Pco12QAv3m-V5ngJpUFJJmVJJe471t0dHcoxn9PBC6eNqJl_oc-OIlI8tTOJAmgHU5gX8&components=hosted-buttons&disable-funding=venmo&currency=EUR"
-                               target="_blank"
-                               class="w-full inline-block px-8 py-4 text-lg font-bold text-white rounded-xl btn-primary shadow-xl hover:shadow-2xl text-center">
-                                Confirm & Pay
-                            </a>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
+    </section>
+    
+    <!-- Footer: Revertido para que "Tastes" sea blanco y "Like Spain" amarillo/dorado -->
     <footer class="bg-stone-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- LOGO in Footer: "Tastes" in white (default text color), "Like Spain" in Saffron Yellow -->
             <p class="text-xl font-black tracking-wider mb-2">
                 Tastes <span class="text-[var(--color-primary)]">Like Spain</span>
             </p>
@@ -489,7 +494,7 @@
             <div class="flex justify-center space-x-6 mb-6">
                 <a href="#" class="text-stone-400 hover:text-[var(--color-primary)] transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                 <a href="#" class="text-stone-400 hover:text-[var(--color-primary)] transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                <a href="mailto:tasteslikespain@gmail.com" class="text-stone-400 hover:text-[var(--color-primary)] transition"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                <a href="tasteslikespain@gmail.com" class="text-stone-400 hover:text-[var(--color-primary)] transition"><i data-lucide="mail" class="w-6 h-6"></i></a>
             </div>
 
             <p class="text-xs text-stone-600">&copy; 2025 Tastes Like Spain. All rights reserved. Made with love (and olive oil).</p>
@@ -530,54 +535,68 @@
 
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', () => {
+                // Simple feedback that button was clicked (you could implement a hidden menu here)
                 console.log('Mobile menu clicked! (A hidden mobile menu would appear here)');
+                // In a real app, you would toggle a class on the header or a dedicated menu div
+                // Example: header.classList.toggle('menu-open');
+                
+                // For this single-file demo, let's just show a notification
                 showNotification('Mobile menu clicked! Navigation is fixed in the desktop version for brevity.', 'info');
             });
         }
 
         // ----------------------------------------------------
-        // JavaScript for Smooth Scrolling
+        // JavaScript for Smooth Scrolling (FIX for TypeError: Cannot read properties of null)
         // ----------------------------------------------------
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
                 const targetId = this.getAttribute('href');
+                // Ensure targetId is not just '#'
                 if (targetId === '#') return; 
 
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    // Smoothly scroll to the target element
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 } else {
                     console.error(`Target element not found for ID: ${targetId}`);
+                    // Optionally perform a standard navigation if smooth scroll fails
                     window.location.hash = targetId; 
                 }
             });
         });
 
         // ----------------------------------------------------
-        // JavaScript for Custom Notification/Alert
+        // JavaScript for Custom Notification/Alert (instead of window.alert)
         // ----------------------------------------------------
         function showNotification(message, type = 'info') {
             let bgColor = 'bg-stone-900';
             if (type === 'success') bgColor = 'bg-green-500';
             if (type === 'error') bgColor = 'bg-red-600';
 
+            // Create notification element
             const notification = document.createElement('div');
             notification.className = `fixed top-5 right-5 p-4 rounded-lg text-white shadow-xl transition-all duration-500 ${bgColor} transform translate-x-full opacity-0 z-[100]`;
             notification.textContent = message;
 
             document.body.appendChild(notification);
 
+            // Show animation
             setTimeout(() => {
                 notification.classList.remove('translate-x-full', 'opacity-0');
                 notification.classList.add('translate-x-0', 'opacity-100');
             }, 10);
 
+            // Hide animation and cleanup
             setTimeout(() => {
                 notification.classList.remove('translate-x-0', 'opacity-100');
                 notification.classList.add('translate-x-full', 'opacity-0');
+                // Remove element after transition
                 setTimeout(() => {
                     notification.remove();
                 }, 500);
@@ -593,6 +612,7 @@
                 e.preventDefault();
                 showNotification('¡Reserva simulada con éxito! Revisa la consola para ver los datos.', 'success');
                 
+                // Collect form data (for simulation)
                 const formData = new FormData(this);
                 const data = {};
                 for (const [key, value] of formData.entries()) {
@@ -604,4 +624,3 @@
     </script>
 </body>
 </html>
-
