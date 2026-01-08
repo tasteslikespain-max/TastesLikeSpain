@@ -9,7 +9,7 @@
      <!-- Cosas de Paypal -->
      <script 
     src="https://www.paypal.com/sdk/js?client-id=BAA1OsrTN9_a3Pco12QAv3m-V5ngJpUFJJmVJJe471t0dHcoxn9PBC6eNqJl_oc-OIlI8tTOJAmgHU5gX8&components=hosted-buttons&disable-funding=venmo&currency=EUR">
-    </script>
+</script>
     <!-- Carga de Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -478,12 +478,14 @@
             </select>
         </div>
 
-        <!-- PayPal button --> <div class="flex justify-center"></div> 
-         <div id="paypal-container-XXN9KQP6H3F5Q"></div> <script> paypal.
-         HostedButtons({ hostedButtonId: "XXN9KQP6H3F5Q", }).
-         render("#paypal-container-XXN9KQP6H3F5Q") 
-
-         </script>
+        <!-- PayPal button --> 
+<div id="paypal-container-XXN9KQP6H3F5Q"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "XXN9KQP6H3F5Q",
+  }).render("#paypal-container-XXN9KQP6H3F5Q")
+</script>
+        
 
     </section>
     
@@ -629,4 +631,5 @@
     </script>
 </body>
 </html>
+
 
