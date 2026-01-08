@@ -105,7 +105,7 @@
         <a href="#fiestas" class="px-4 py-1.5 rounded-full text-white btn-primary shadow-lg">Book Now</a>
       </nav>
 
-      <!-- Mobile Menu Button (kept as in your original: demo only) -->
+      <!-- Mobile Menu Button (demo only) -->
       <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-[var(--color-primary)] hover:bg-red-50 transition">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -203,8 +203,15 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           <!-- Fiesta 1 -->
           <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up">
-            <img src="img/talleroficial.jpg" alt="Spanish Home Cooking" class="w-full h-48 object-cover" loading="lazy"
-              onerror="this.onerror=null;this.src='https://placehold.co/600x400/C13832/FFFFFF?text=Paella+Valenciana'">
+            <div class="relative">
+              <img src="img/talleroficial.jpg" alt="Spanish Home Cooking" class="w-full h-48 object-cover" loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x400/C13832/FFFFFF?text=Paella+Valenciana'">
+              <!-- TOP RIGHT STATUS -->
+              <div class="absolute top-3 right-3 px-3 py-1 rounded-md text-xs font-bold bg-[var(--color-secondary)] text-stone-900 shadow-lg">
+                Selling out
+              </div>
+            </div>
+
             <div class="p-6">
               <h3 class="text-2xl font-bold text-stone-900 mb-2">Spanish Home Cooking</h3>
               <p class="text-sm font-semibold text-[var(--color-primary)] mb-4">3 Hours | All Levels</p>
@@ -233,8 +240,15 @@
 
           <!-- Fiesta 2 -->
           <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up" style="transition-delay: 100ms;">
-            <img src="img/postresspain.jpg" alt="Spanish Desserts" class="w-full h-48 object-cover" loading="lazy"
-              onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFB300/333333?text=Spanish+Desserts'">
+            <div class="relative">
+              <img src="img/postresspain.jpg" alt="Spanish Desserts" class="w-full h-48 object-cover" loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFB300/333333?text=Spanish+Desserts'">
+              <!-- TOP RIGHT STATUS -->
+              <div class="absolute top-3 right-3 px-3 py-1 rounded-md text-xs font-bold bg-stone-900 text-white shadow-lg">
+                Fully booked
+              </div>
+            </div>
+
             <div class="p-6">
               <h3 class="text-2xl font-bold text-stone-900 mb-2">Churros, Torrijas & Crema Catalana</h3>
               <p class="text-sm font-semibold text-[var(--color-primary)] mb-4">2 Hours | All Levels</p>
@@ -262,8 +276,15 @@
 
           <!-- Fiesta 3 -->
           <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden workshop-card slide-up" style="transition-delay: 200ms;">
-            <img src="img/pintxosvascos.jpg" alt="Basque Pintxos" class="w-full h-48 object-cover" loading="lazy"
-              onerror="this.onerror=null;this.src='https://placehold.co/600x400/795548/FFFFFF?text=Basque+Pintxos'">
+            <div class="relative">
+              <img src="img/pintxosvascos.jpg" alt="Basque Pintxos" class="w-full h-48 object-cover" loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x400/795548/FFFFFF?text=Basque+Pintxos'">
+              <!-- TOP RIGHT STATUS -->
+              <div class="absolute top-3 right-3 px-3 py-1 rounded-md text-xs font-bold bg-stone-900 text-white shadow-lg">
+                Fully booked
+              </div>
+            </div>
+
             <div class="p-6">
               <h3 class="text-2xl font-bold text-stone-900 mb-2">Basque Pintxos & Asturian Cachopo</h3>
               <p class="text-sm font-semibold text-[var(--color-primary)] mb-4">3.5 Hours | All Levels</p>
@@ -348,7 +369,6 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          <!-- Aitana -->
           <div class="text-center slide-up">
             <div class="relative inline-block mb-6">
               <img src="img/aitanalacheff01.png" alt="Aitana"
@@ -361,7 +381,6 @@
             <p class="text-lg font-semibold text-[var(--color-tertiary)] mb-3">Kitchen · Workshop</p>
           </div>
 
-          <!-- Alberto -->
           <div class="text-center slide-up" style="transition-delay: 100ms;">
             <div class="relative inline-block mb-6">
               <img src="img/albertoelcheff01.png" alt="Alberto"
@@ -374,7 +393,6 @@
             <p class="text-lg font-semibold text-[var(--color-tertiary)] mb-3">Kitchen · On the stove</p>
           </div>
 
-          <!-- Sofía -->
           <div class="text-center slide-up" style="transition-delay: 200ms;">
             <div class="relative inline-block mb-6">
               <img src="img/sofilacheff01.png" alt="Sofía"
@@ -387,7 +405,6 @@
             <p class="text-lg font-semibold text-[var(--color-tertiary)] mb-3">Kitchen · Workshop</p>
           </div>
 
-          <!-- Jacobo -->
           <div class="text-center slide-up" style="transition-delay: 300ms;">
             <div class="relative inline-block mb-6">
               <img src="img/marloelcheff02.jpg" alt="Jacobo"
@@ -400,7 +417,6 @@
             <p class="text-lg font-semibold text-[var(--color-tertiary)] mb-3">Kitchen · Hosting</p>
           </div>
 
-          <!-- Simone -->
           <div class="text-center slide-up" style="transition-delay: 500ms;">
             <div class="relative inline-block mb-6">
               <img src="img/simolacheff01.png" alt="Simone"
@@ -413,7 +429,6 @@
             <p class="text-lg font-semibold text-[var(--color-tertiary)] mb-3">Kitchen · On the stove</p>
           </div>
 
-          <!-- Ana -->
           <div class="text-center slide-up" style="transition-delay: 400ms;">
             <div class="relative inline-block mb-6">
               <img src="img/anitalacheff01.png" alt="Ana"
